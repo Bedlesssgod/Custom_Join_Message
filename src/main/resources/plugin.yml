@@ -1,4 +1,3 @@
 name: CustomJoinMessage
 version: '${project.version}'
 main: com.bedless.customjoinmessage.CustomJoinMessage
-api-version: 1.18
