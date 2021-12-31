@@ -1,0 +1,22 @@
+#+++++++++++++++++++++++Custom Join Message Configurations+++++++++++++++++++++++#
+
+#===========Placeholders==========#
+#%player% Will be replaced with the player's name
+
+#===========Color Codes===========#
+#Default Color codes are Supported Example Below
+#&8[&2+&8] &2%player%
+
+#=============Other================#
+#Fill the field Join_message or Quit_message
+#with default to Activate the default minecraft
+#Quit/Join message!
+
+#============Configuration=========#
+#Join Message
+Join_message_enabled: true
+Join_message: "&8[&2+&8] &2%player%"
+
+#Quit/Leave Message
+Quit_message_enabled: true
+Quit_message: "&8[&4+&8] &4%player%"
