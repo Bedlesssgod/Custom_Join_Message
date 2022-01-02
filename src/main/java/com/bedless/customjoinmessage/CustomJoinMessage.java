@@ -16,19 +16,26 @@ public final class CustomJoinMessage extends JavaPlugin implements Listener {
         return INSTANCE;
     }
 
-    String Enable1 = ChatColor.DARK_GREEN + "++++++++++++++++++++++++++";
-    String Disable1 = ChatColor.DARK_RED + "++++++++++++++++++++++++++";
-    String PluginName = ChatColor.AQUA + "Custom Join Message";
-    String enabled = ChatColor.GREEN + "Enabled";
-    String Disabled = ChatColor.RED + "Disabled";
-
     @Override
     public void onEnable() {
         INSTANCE = this;
-        Bukkit.getConsoleSender().sendMessage(Enable1);
-        Bukkit.getConsoleSender().sendMessage(PluginName);
-        Bukkit.getConsoleSender().sendMessage(enabled);
-        Bukkit.getConsoleSender().sendMessage(Enable1);
+        String version1 = Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3].split("_")[1];
+        if(version1.equals(18)){
+            String line1 = ChatColor.GREEN + "===================";
+            Bukkit.getConsoleSender().sendMessage(line1);
+            Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA + "Custom Join Message Plugin");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "Enabled");
+            Bukkit.getConsoleSender().sendMessage("Running on " + Bukkit.getBukkitVersion());
+            Bukkit.getConsoleSender().sendMessage(line1);
+        }else if(version1.equals(7-17)){
+            String line1 = ChatColor.GREEN + "===================";
+            Bukkit.getConsoleSender().sendMessage(line1);
+            Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA + "Custom Join Message Plugin");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "Enabled");
+            Bukkit.getConsoleSender().sendMessage("Running on " + Bukkit.getBukkitVersion());
+            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + "Unsupported Version! This Plugin may not function as expected Please");
+            Bukkit.getConsoleSender().sendMessage(line1);
+        }
         registerEvents();
         registerCommands();
         getConfig().options().copyDefaults();
@@ -46,10 +53,11 @@ public final class CustomJoinMessage extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(Disable1);
-        Bukkit.getConsoleSender().sendMessage(PluginName);
-        Bukkit.getConsoleSender().sendMessage(Disabled);
-        Bukkit.getConsoleSender().sendMessage(Disable1);
+        String line2 = ChatColor.RED + "===================";
+        Bukkit.getConsoleSender().sendMessage(line2);
+        Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA + "Custom Join Message Plugin");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Disabled");
+        Bukkit.getConsoleSender().sendMessage(line2);
         saveDefaultConfig();
     }
     @EventHandler
