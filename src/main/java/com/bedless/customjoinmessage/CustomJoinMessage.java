@@ -27,13 +27,14 @@ public final class CustomJoinMessage extends JavaPlugin implements Listener {
             Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "Enabled");
             Bukkit.getConsoleSender().sendMessage("Running on " + Bukkit.getBukkitVersion());
             Bukkit.getConsoleSender().sendMessage(line1);
-        }else if(version1.equals(7-17)){
+        } else {
             String line1 = ChatColor.GREEN + "===================";
             Bukkit.getConsoleSender().sendMessage(line1);
             Bukkit.getConsoleSender().sendMessage(ChatColor.AQUA + "Custom Join Message Plugin");
             Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "" + ChatColor.BOLD + "Enabled");
             Bukkit.getConsoleSender().sendMessage("Running on " + Bukkit.getBukkitVersion());
-            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + "Unsupported Version! This Plugin may not function as expected Please");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + "This Plugin is not running on the intended Spigot Version!");
+            Bukkit.getConsoleSender().sendMessage(ChatColor.DARK_RED + "Plugin may not behave as expected!");
             Bukkit.getConsoleSender().sendMessage(line1);
         }
         registerEvents();
